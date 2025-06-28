@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskFlow - Your Personal Productivity Companion</title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo"></div>
+      <h1>TaskFlow</h1>
+      <p class="subtitle">Your Personal Productivity Companion</p>
+      <div class="verification-notice">
+        Age verification required for access
+      </div>
+
+      <div class="form-container">
+        <h2 class="form-title">Verify Your Identity</h2>
+        <form id="verificationForm">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="dateOfBirth">Date of Birth</label>
+            <input type="date" id="dateOfBirth" name="dateOfBirth" required />
+          </div>
+
+          <button type="submit" class="submit-btn" id="submitBtn">
+            <span class="btn-text">✓ Verify & Continue</span>
+            <div class="loading">
+              <div class="loading-spinner"></div>
+            </div>
+          </button>
+
+          <div
+            id="errorMessage"
+            class="error-message"
+            style="display: none"
+          ></div>
+        </form>
+
+        <div class="terms">
+          By continuing, you confirm that you are over 10 years old and agree to
+          our terms of service.
+        </div>
+      </div>
+    </div>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>
