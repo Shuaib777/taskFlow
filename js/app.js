@@ -333,7 +333,9 @@ const setupTaskEventListeners = () => {
 
 const getFilteredTasks = () => {
   const searchValue =
-    document.getElementById("searchInput")?.value.toLowerCase().trim() || "";
+    document.getElementById("searchInput")?.value.toLowerCase().trim() ||
+    document.getElementById("mobileSearchInput")?.value.toLowerCase().trim() ||
+    "";
   const tasks = appState.tasks[appState.currentStage];
   if (!searchValue) return tasks;
 
