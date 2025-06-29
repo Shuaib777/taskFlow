@@ -11,6 +11,29 @@
       <header class="header">
         <h1 class="app-title">TaskFlow</h1>
         <div class="user-section">
+          <div class="search-wrapper">
+            <button class="search-icon-btn" id="searchToggleBtn" title="Search">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="search-icon"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+                />
+              </svg>
+            </button>
+            <input
+              type="text"
+              id="searchInput"
+              class="search-input collapsed"
+              placeholder="Search tasks..."
+            />
+          </div>
+
           <span class="username" id="username"></span>
           <div class="avatar" id="userAvatar"></div>
           <button
@@ -66,10 +89,18 @@
                 stroke-linejoin="round"
               />
             </svg>
-            Sign Out
+            <span class="sign-out-text"> Sign Out </span>
           </button>
         </div>
       </header>
+      <div class="mobile-search" id="mobileSearchBar">
+        <input
+          type="text"
+          id="mobileSearchInput"
+          placeholder="Search tasks..."
+          class="mobile-search-input"
+        />
+      </div>
 
       <div class="stage-tabs">
         <button class="stage-tab active" data-stage="todo" id="todoTab">
@@ -91,7 +122,7 @@
             placeholder="Add your task (text-box)"
             class="task-input"
           />
-          <button id="submitBtn" class="submit-btn">Submit</button>
+          <button id="submitBtn" class="submit-btn">Add</button>
         </div>
       </div>
 

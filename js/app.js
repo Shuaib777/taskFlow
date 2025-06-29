@@ -331,9 +331,21 @@ const setupTaskEventListeners = () => {
   });
 };
 
+const getFilteredTasks = () => {
+  const searchValue =
+    document.getElementById("searchInput")?.value.toLowerCase().trim() || "";
+  const tasks = appState.tasks[appState.currentStage];
+  if (!searchValue) return tasks;
+
+  return tasks.filter((task) =>
+    task.title.toLowerCase().startsWith(searchValue)
+  );
+  // return tasks.filter((task) => task.title.toLowerCase().includes(searchValue));
+};
+
 const renderTasks = () => {
   const stageElement = document.getElementById(`${appState.currentStage}Stage`);
-  const tasks = appState.tasks[appState.currentStage];
+  const tasks = getFilteredTasks();
 
   //   console.log(appState.currentStage);
 
@@ -378,6 +390,33 @@ const setupEventListeners = () => {
     toggleTheme();
   });
   document.getElementById("signOutBtn").addEventListener("click", signOut);
+  document.getElementById("searchInput").addEventListener("input", () => {
+    renderTasks();
+  });
+  document.getElementById("mobileSearchInput").addEventListener("input", () => {
+    renderTasks();
+  });
+
+  document.getElementById("searchToggleBtn").addEventListener("click", () => {
+    const input = document.getElementById("searchInput");
+    input.classList.toggle("expanded");
+    input.classList.toggle("collapsed");
+
+    if (input.classList.contains("expanded")) {
+      input.focus();
+    }
+  });
+
+  document.addEventListener("click", (e) => {
+    const input = document.getElementById("searchInput");
+    const btn = document.getElementById("searchToggleBtn");
+    const wrapper = document.querySelector(".search-wrapper");
+
+    if (!wrapper.contains(e.target)) {
+      input.classList.add("collapsed");
+      input.classList.remove("expanded");
+    }
+  });
 };
 
 const initTaskFlowApp = async () => {

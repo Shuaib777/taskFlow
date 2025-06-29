@@ -13,14 +13,15 @@
   --tab-bg: rgba(255, 255, 255, 0.1);
   --btn-primary: #4285f4;
   --btn-primary-hover: #3367d6;
-  --btn-marked: #34a853;
-  --btn-marked-hover: #32924c;
-  --btn-move: #ff9800;
-  --btn-move-hover: #e68900;
+  --btn-marked: #34c759;
+  --btn-marked-hover: #297f3f;
+  --btn-move: #a259ff;
+  --btn-move-hover: #6b38ae;
   --primary-accent: #2a5298;
   --icon-fill: #ffffff;
   --icon-fill-hover: #e0e0e0;
   --text-gradient: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  --button-text-primary: #000;
 }
 
 [data-theme="light"] {
@@ -36,4 +37,11 @@
   --icon-fill: #333333;
   --icon-fill-hover: #666666;
   --text-gradient: linear-gradient(135deg, #1f3851, #e2e8f0);
+  --button-text-primary: #fff;
+  --btn-primary: #4285f4;
+  --btn-primary-hover: #3367d6;
+  --btn-marked: #34c759;
+  --btn-marked-hover: #297f3f;
+  --btn-move: #a259ff;
+  --btn-move-hover: #6b38ae;
 }
