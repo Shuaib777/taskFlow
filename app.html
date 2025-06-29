@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    App
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskFlow - Todo App</title>
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="app-title">My Todo App</h1>
+        <div class="user-section">
+          <span class="username" id="username"></span>
+          <div class="avatar" id="userAvatar"></div>
+          <button class="sign-out-btn" id="signOutBtn">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            Sign Out
+          </button>
+        </div>
+      </header>
+
+      <div class="stage-tabs">
+        <button class="stage-tab active" data-stage="todo" id="todoTab">
+          Todo (<span id="todoCount">0</span>)
+        </button>
+        <button class="stage-tab" data-stage="completed" id="completedTab">
+          Completed (<span id="completedCount">0</span>)
+        </button>
+        <button class="stage-tab" data-stage="archived" id="archivedTab">
+          Archived (<span id="archivedCount">0</span>)
+        </button>
+      </div>
+
+      <div class="task-input-section">
+        <div class="input-group">
+          <input
+            type="text"
+            id="taskInput"
+            placeholder="Add your task (text-box)"
+            class="task-input"
+          />
+          <button id="submitBtn" class="submit-btn">Submit</button>
+        </div>
+      </div>
+
+      <div class="tasks-container">
+        <div class="task-stage active" id="todoStage"></div>
+        <div class="task-stage" id="completedStage"></div>
+        <div class="task-stage" id="archivedStage"></div>
+      </div>
+    </div>
+
+    <div class="toast" id="toast">
+      <div class="toast-content">
+        <div class="toast-title" id="toastTitle">Task Updated</div>
+        <div class="toast-message" id="toastMessage">
+          Task moved to Completed.
+        </div>
+      </div>
+    </div>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
