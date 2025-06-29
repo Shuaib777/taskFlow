@@ -8,6 +8,20 @@ let appState = {
   userData: {},
 };
 
+let currentTheme = "dark";
+
+const loadTheme = () => {
+  const savedTheme = localStorage.getItem("taskflow_theme") || "dark";
+  currentTheme = savedTheme;
+  document.documentElement.setAttribute("data-theme", savedTheme);
+};
+
+const toggleTheme = () => {
+  currentTheme = currentTheme === "dark" ? "light" : "dark";
+  document.documentElement.setAttribute("data-theme", currentTheme);
+  localStorage.setItem("taskflow_theme", currentTheme);
+};
+
 const checkUserData = () => {
   const storedUserData = localStorage.getItem("taskflow_user");
   if (!storedUserData) {
@@ -143,11 +157,11 @@ const addTask = () => {
   const newTask = {
     id: Date.now() + Math.random(),
     title: taskTitle,
-    stage: appState.currentStage,
+    stage: "todo",
     lastModified: getCurrentTimestamp(),
   };
 
-  appState.tasks[appState.currentStage].push(newTask);
+  appState.tasks["todo"].push(newTask);
   saveTasks();
 
   taskInput.value = "";
@@ -155,10 +169,7 @@ const addTask = () => {
   updateCounters();
   focusOnTask(newTask.id);
 
-  showToast(
-    "Task Added",
-    `Task added to ${capitalizeFirst(appState.currentStage)}.`
-  );
+  showToast("Task Added", `Task added to ${capitalizeFirst("todo")}.`);
 };
 
 const moveTask = (taskId, fromStage, toStage) => {
@@ -363,6 +374,9 @@ const setupEventListeners = () => {
     }
   });
 
+  document.getElementById("themeToggleBtn").addEventListener("click", () => {
+    toggleTheme();
+  });
   document.getElementById("signOutBtn").addEventListener("click", signOut);
 };
 
@@ -371,6 +385,7 @@ const initTaskFlowApp = async () => {
     return;
   }
 
+  loadTheme();
   loadTasks();
 
   await loadInitialData();

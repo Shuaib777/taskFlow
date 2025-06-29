@@ -1,0 +1,39 @@
+:root {
+  --font-fam: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+  --bg-gradient: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  --text-primary: #ffffff;
+  --hover-bg-light: #f0f0f0;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --card-bg: rgba(30, 60, 114, 0.4);
+  --card-bg-hover: rgba(22, 50, 101, 0.4);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --card-border-secondary: rgba(47, 41, 41, 0.1);
+  --input-bg: rgba(255, 255, 255, 0.1);
+  --tab-bg: rgba(255, 255, 255, 0.1);
+  --btn-primary: #4285f4;
+  --btn-primary-hover: #3367d6;
+  --btn-marked: #34a853;
+  --btn-marked-hover: #32924c;
+  --btn-move: #ff9800;
+  --btn-move-hover: #e68900;
+  --primary-accent: #2a5298;
+  --icon-fill: #ffffff;
+  --icon-fill-hover: #e0e0e0;
+  --text-gradient: linear-gradient(135deg, #f8fafc, #e2e8f0);
+}
+
+[data-theme="light"] {
+  --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --card-bg: rgba(255, 255, 255, 0.8);
+  --card-bg-hover: rgba(255, 255, 255, 0.8);
+  --card-border: rgba(0, 0, 0, 0.1);
+  --card-border-secondary: rgba(1, 1, 1, 0.1);
+  --input-bg: rgba(255, 255, 255, 0.9);
+  --tab-bg: rgba(255, 255, 255, 0.6);
+  --icon-fill: #333333;
+  --icon-fill-hover: #666666;
+  --text-gradient: linear-gradient(135deg, #1f3851, #e2e8f0);
+}

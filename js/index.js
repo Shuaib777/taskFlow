@@ -15,6 +15,14 @@ window.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+const loadTheme = () => {
+  const savedTheme = localStorage.getItem("taskflow_theme") || "dark";
+  currentTheme = savedTheme;
+  document.documentElement.setAttribute("data-theme", savedTheme);
+};
+
+loadTheme();
+
 document
   .getElementById("verificationForm")
   .addEventListener("submit", function (e) {
