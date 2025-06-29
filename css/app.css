@@ -33,6 +33,25 @@ body {
   color: var(--text-primary);
 }
 
+.logo .logo-icon {
+  width: 260px;
+  height: auto;
+  color: var(--text-primary);
+}
+
+.logo-icon path {
+  stroke: var(--text-primary);
+  stroke-width: 2;
+}
+
+.logo-icon .rectangle {
+  fill: var(--btn-primary);
+}
+
+.logo-icon circle {
+  fill: var(--btn-primary);
+}
+
 .user-section {
   display: flex;
   align-items: center;

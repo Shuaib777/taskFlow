@@ -23,23 +23,23 @@ body {
   width: 100%;
 }
 
-.logo {
-  width: 80px;
-  height: 80px;
-  background: var(--btn-primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 24px;
-  font-size: 32px;
-  font-weight: bold;
-  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+.logo .logo-icon {
+  width: 260px;
+  height: auto;
+  color: var(--text-primary);
 }
 
-.logo::before {
-  content: "✓";
-  color: var(--text-primary);
+.logo-icon path {
+  stroke: var(--text-primary);
+  stroke-width: 2;
+}
+
+.logo-icon .rectangle {
+  fill: var(--btn-primary);
+}
+
+.logo-icon circle {
+  fill: var(--btn-primary);
 }
 
 h1 {
@@ -223,6 +223,12 @@ h1 {
 
   h1 {
     font-size: 2rem;
+  }
+
+  .logo .logo-icon {
+    width: 140px;
+    height: auto;
+    /* fill: var(--bg-gradient); */
   }
 
   .form-container {
