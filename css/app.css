@@ -103,7 +103,7 @@ body {
 }
 
 .sign-out-btn:hover {
-  background: var(--hover-bg-light);
+  /* background: var(--hover-bg-light); */
   transform: translateY(-1px);
 }
 
