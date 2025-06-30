@@ -92,7 +92,7 @@ body {
   align-items: center;
   gap: 8px;
   background: var(--text-primary);
-  color: var(--button-text-primary);
+  color: var(--text-bg);
   border: none;
   padding: 10px 16px;
   border-radius: 8px;
