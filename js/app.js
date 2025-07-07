@@ -6,20 +6,19 @@ let appState = {
     archived: [],
   },
   userData: {},
+  currentTheme: "dark",
 };
-
-let currentTheme = "dark";
 
 const loadTheme = () => {
   const savedTheme = localStorage.getItem("taskflow_theme") || "dark";
-  currentTheme = savedTheme;
+  appState.currentTheme = savedTheme;
   document.documentElement.setAttribute("data-theme", savedTheme);
 };
 
 const toggleTheme = () => {
-  currentTheme = currentTheme === "dark" ? "light" : "dark";
-  document.documentElement.setAttribute("data-theme", currentTheme);
-  localStorage.setItem("taskflow_theme", currentTheme);
+  appState.currentTheme = appState.currentTheme === "dark" ? "light" : "dark";
+  document.documentElement.setAttribute("data-theme", appState.currentTheme);
+  localStorage.setItem("taskflow_theme", appState.currentTheme);
 };
 
 const checkUserData = () => {
@@ -43,7 +42,7 @@ const renderUserInfo = () => {
   const usernameElement = document.getElementById("username");
   const avatarElement = document.getElementById("userAvatar");
 
-  usernameElement.textContent = appState.userData.name;
+  usernameElement.textContent = appState.userData.name.substring(0, 8);
 
   const avatarUrl = `https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=${encodeURIComponent(
     appState.userData.name
@@ -169,7 +168,7 @@ const addTask = () => {
   updateCounters();
   focusOnTask(newTask.id);
 
-  showToast("Task Added", `Task added to ${capitalizeFirst("todo")}.`);
+  showToast("Task Added", `Task added to Todo.`);
 };
 
 const moveTask = (taskId, fromStage, toStage) => {
@@ -217,6 +216,7 @@ const switchStage = (stage) => {
   document.querySelectorAll(".stage-tab").forEach((tab) => {
     tab.classList.remove("active");
   });
+
   document.querySelector(`[data-stage="${stage}"]`).classList.add("active");
 
   document.querySelectorAll(".task-stage").forEach((stageEle) => {
@@ -342,7 +342,6 @@ const getFilteredTasks = () => {
   return tasks.filter((task) =>
     task.title.toLowerCase().startsWith(searchValue)
   );
-  // return tasks.filter((task) => task.title.toLowerCase().includes(searchValue));
 };
 
 const renderTasks = () => {
@@ -411,12 +410,11 @@ const setupEventListeners = () => {
 
   document.addEventListener("click", (e) => {
     const input = document.getElementById("searchInput");
-    const btn = document.getElementById("searchToggleBtn");
     const wrapper = document.querySelector(".search-wrapper");
 
     if (!wrapper.contains(e.target)) {
-      input.classList.add("collapsed");
-      input.classList.remove("expanded");
+      input.classList.toggle("collapsed");
+      input.classList.toggle("expanded");
     }
   });
 };
@@ -428,7 +426,6 @@ const initTaskFlowApp = async () => {
 
   loadTheme();
   loadTasks();
-
   await loadInitialData();
 
   setupEventListeners();

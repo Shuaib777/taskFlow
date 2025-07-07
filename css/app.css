@@ -129,7 +129,7 @@ body {
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+  /* backdrop-filter: blur(10px); */
 }
 
 .stage-tab:hover {
@@ -165,7 +165,7 @@ body {
   border-radius: 8px;
   color: var(--text-primary);
   font-size: 14px;
-  backdrop-filter: blur(10px);
+  /* backdrop-filter: blur(10px); */
 }
 
 .task-input::placeholder {
@@ -218,7 +218,7 @@ body {
   border-radius: 12px;
   padding: 20px;
   margin-bottom: 12px;
-  backdrop-filter: blur(10px);
+  /* backdrop-filter: blur(10px); */
   transition: all 0.3s ease;
 }
 
@@ -432,7 +432,6 @@ body {
   }
   .header {
     width: 100%;
-    flex-direction: row;
     gap: 15px;
     justify-content: space-between;
     text-align: center;
@@ -564,7 +563,7 @@ body {
   }
 }
 
-/* toggle theme */
+/* toggle theme https://toggles.dev/expand */
 @import "https://unpkg.com/open-props/easings.min.css";
 
 .theme-toggle-btn {
