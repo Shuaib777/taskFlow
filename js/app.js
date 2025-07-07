@@ -413,10 +413,25 @@ const setupEventListeners = () => {
     const wrapper = document.querySelector(".search-wrapper");
 
     if (!wrapper.contains(e.target)) {
-      input.classList.toggle("collapsed");
-      input.classList.toggle("expanded");
+      input.classList.add("collapsed");
+      input.classList.remove("expanded");
     }
   });
+
+  // document.addEventListener("keydown", (e) => {
+  //   if (e.ctrlKey && e.key === "Enter") {
+  //     addTask();
+  //   }
+  //   if (e.ctrlKey && e.key === "t") {
+  //     switchStage("todo");
+  //   }
+  //   if (e.ctrlKey && e.key === "c") {
+  //     switchStage("completed");
+  //   }
+  //   if (e.ctrlKey && e.key === "a") {
+  //     switchStage("archived");
+  //   }
+  // });
 };
 
 const initTaskFlowApp = async () => {
